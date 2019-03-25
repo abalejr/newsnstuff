@@ -1,3 +1,6 @@
+# newsnstuff
+A simple clone of hackernews to practice React + Apollo
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
