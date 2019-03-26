@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+import './styles/index.css'
+import App from './components/App'
 import * as serviceWorker from './serviceWorker'
 import { ApolloProvider } from 'react-apollo'
 import { ApolloClient } from 'apollo-client'
@@ -10,11 +10,11 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 
 const 
     httpLink = createHttpLink({
-    uri: 'http://localhost:4000'
-    }), 
+        uri: 'http://localhost:4000'
+    }),
     client = new ApolloClient({
-    link: httpLink,
-    cache: new InMemoryCache()
+        link: httpLink,
+        cache: new InMemoryCache()
     })
 ;
 
@@ -24,4 +24,5 @@ ReactDOM.render(
   </ApolloProvider>,
   document.getElementById('root')
 )
-serviceWorker.unregister();
+
+serviceWorker.unregister()
