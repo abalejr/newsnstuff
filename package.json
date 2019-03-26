@@ -4,8 +4,11 @@
   "private": true,
   "homepage": "https://abalejr.github.io/newsnstuff",
   "dependencies": {
+    "apollo-boost": "^0.3.1",
     "gh-pages": "^2.0.1",
+    "graphql": "^14.1.1",
     "react": "^16.8.5",
+    "react-apollo": "^2.5.3",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8"
   },
