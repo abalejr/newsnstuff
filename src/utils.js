@@ -1,0 +1,36 @@
+const timeDifference = (current, previous) => {
+  const 
+    milliSecondsPerMinute = 60 * 1000,
+    milliSecondsPerHour = milliSecondsPerMinute * 60,
+    milliSecondsPerDay = milliSecondsPerHour * 24,
+    milliSecondsPerMonth = milliSecondsPerDay * 30,
+    milliSecondsPerYear = milliSecondsPerDay * 365,
+    elapsed = current - previous
+  ;
+
+  if (elapsed < milliSecondsPerMinute / 3) {
+    return 'just now'
+  }
+
+  if (elapsed < milliSecondsPerMinute) {
+    return 'less than 1 min ago'
+  } else if (elapsed < milliSecondsPerHour) {
+    return Math.round(elapsed / milliSecondsPerMinute) + ' min ago'
+  } else if (elapsed < milliSecondsPerDay) {
+    return Math.round(elapsed / milliSecondsPerHour) + ' h ago'
+  } else if (elapsed < milliSecondsPerMonth) {
+    return Math.round(elapsed / milliSecondsPerDay) + ' days ago'
+  } else if (elapsed < milliSecondsPerYear) {
+    return Math.round(elapsed / milliSecondsPerMonth) + ' mo ago'
+  } else {
+    return Math.round(elapsed / milliSecondsPerYear) + ' years ago'
+  }
+}
+
+export function timeDifferenceForDate(date) {
+  const 
+    now = new Date().getTime(),
+    updated = new Date(date).getTime()
+  ;
+  return timeDifference(now, updated)
+}
