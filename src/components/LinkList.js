@@ -12,6 +12,16 @@ const
           createdAt
           url
           description
+          postedBy {
+            id
+            name
+          }
+          votes {
+            id
+            user {
+              id
+            }
+          }
         }
       }
     }
